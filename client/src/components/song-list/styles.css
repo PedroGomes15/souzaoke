@@ -1,0 +1,7 @@
+.containerSongList {
+  background-color: purple;
+  height: fit-content;
+  width: 60%;
+  left: 100px;
+  position: relative;
+}

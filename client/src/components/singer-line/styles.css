@@ -1,0 +1,51 @@
+.container-singer {
+  width: fit-content;
+  height: fit-content;
+  max-height: 85%;
+  position: absolute;
+  right: 50px;
+  top: 5%;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #09909b, 0 0 0.8rem #09909b, inset 0 0 1.3rem #09909b;
+}
+
+.list-line-container {
+  max-height: calc((90px * 4));
+  overflow-y: scroll;
+  padding: 8% 8% 0 8%;
+}
+
+.lineContainer {
+  width: 100%;
+  height: 80px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
+  border-radius: 7px;
+  background: radial-gradient(#09909b, #007680);
+  position: relative;
+}
+
+.lineIndex {
+  position: absolute;
+  color: #ff5400;
+  left: -5%;
+  top: -30%;
+  transform: rotate(-10deg);
+  font-size: 3.5em;
+  /*text-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #ff5400, 0 0 0.8rem #ff5400, 0 0 1.3rem #ff5400;*/
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.7);
+  font-weight: bold;
+}
+
+.lineName {
+  position: absolute;
+  color: white;
+  text-align: center;
+  font-size: 2.5em;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.7);
+}

@@ -1,0 +1,55 @@
+.App {
+  text-align: center;
+  height: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #262626;
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #202020;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid #ff5400;
+  box-shadow: inset 0 0 0.3rem #ff5400;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb::before {
+  filter: blur(30px);
+}
+
+@keyframes animate {
+  0%,
+  100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(360deg);
+  }
+}

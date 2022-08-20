@@ -1,0 +1,81 @@
+.checkbox-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 90%;
+}
+
+:root {
+  --body: #fafafa;
+  --text-default: #1d1d1f;
+  --text-secondary: #86868b;
+}
+
+/* Checkbox Styles */
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  outline: none;
+  position: relative;
+  height: 2.2rem;
+  width: 5rem;
+  border: 2px solid var(--body);
+  border-radius: 2.5rem;
+  cursor: pointer;
+  margin-right: 10px;
+  background-color: #c3c3c3;
+  box-shadow: inset 10px 10px 15px -10px #c3c3c3, inset -10px -10px 15px -10px #fff;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  height: 1.75rem;
+  width: 1.75rem;
+  background-color: var(--body);
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0.1rem;
+  bottom: 0;
+  border-radius: 50%;
+  /*box-shadow: 7px 7px 15px #c3c3c3, 9px 9px 16px rgba(189, 189, 189, 0.6);*/
+  transition: 0.15s;
+}
+
+/* Label */
+input[type="checkbox"]::after {
+  content: "Não";
+  position: absolute;
+  font-size: 1rem;
+  top: 0.5rem;
+  right: 0.3rem;
+  color: var(--text-secondary);
+  font-family: "SF Pro Text", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.004em;
+  font-weight: bold;
+  box-shadow: none;
+}
+
+/* Checked Styles */
+input[type="checkbox"]:checked {
+  background: #09909b;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #09909b, 0 0 0.8rem #09909b, inset 0 0 1.3rem #09909b;
+}
+input[type="checkbox"]:checked::before {
+  left: 2.8rem;
+  box-shadow: none;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "Sim";
+  left: 0.5rem;
+  color: #f5f5f7;
+}
+
+.label {
+  margin: auto;
+  font-size: 1.2vw;
+  color: white;
+  position: relative;
+}
