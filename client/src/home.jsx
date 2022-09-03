@@ -10,7 +10,7 @@ export const Home = () => {
   const [data, setData] = React.useState(null);
 
   useEffect(() => {
-    fetch("/api")
+    fetch("/new_sign")
       .then((res) => res.json())
       .then((data) => setData(data.message));
   }, []);
