@@ -3,18 +3,33 @@ const Firebase = require("../database/firebase");
 const Room = require("../database/room_database");
 
 module.exports = {
-  async read(request, response) {
-    return response.json(r);
+  async read(req, res) {
+    const room_id = req.query.room_id;
+    Room.GetRoom(room_id, (room) => {
+      return res.json(room);
+    });
   },
 
-  async create(req, res, t) {
-    console.log("request ", req);
-    let r = Room.NewRoom(req.body);
-    return res.json(r);
+  async create(req, res) {
+    const room_id = Room.GenerateId();
+    Room.GetRoom(room_id, (room) => {
+      if (!room) {
+        let r = Room.NewRoom(req.body, room_id);
+        return res.json(r);
+      }
+    });
   },
 
-  async update(request, response) {
-    return response.json();
+  async update(req, res) {
+    const room_id = req.query.room_id;
+    Room.GetRoom(room_id, (room) => {
+      if (room) {
+        let r = Room.UpdateRoom(req.body, room, room_id);
+        return res.json(r);
+      } else {
+        return res.json({ status: "Room Not Finded" });
+      }
+    });
   },
 
   async delete(request, response) {

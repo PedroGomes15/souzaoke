@@ -1,5 +1,5 @@
 const { initializeApp } = require("firebase/app");
-const { getDatabase } = require("firebase/database");
+const { getDatabase, serverTimestamp } = require("firebase/database");
 
 const firebaseConfig = {
   apiKey: "AIzaSyDwmnV-rbsc1ei-29f6TkocOH2tTTZDaoA",
@@ -13,6 +13,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 
+const getTimestamp = function () {
+  return serverTimestamp();
+};
+
 module.exports = {
   db,
+  getTimestamp,
 };
