@@ -6,6 +6,7 @@ module.exports = {
   async read(req, res) {
     const room_id = req.query.room_id;
     Room.GetRoom(room_id, (room) => {
+      console.log("Get Room ", room);
       return res.json(room);
     });
   },

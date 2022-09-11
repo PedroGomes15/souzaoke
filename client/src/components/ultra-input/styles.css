@@ -7,39 +7,3 @@
   box-shadow: inset 0 0 0.8rem black;
   border-radius: 10px;
 }
-
-.input {
-  -webkit-appearance: none;
-  width: 85%;
-  height: 60px;
-  line-height: 50px;
-  font-size: 1.5vw;
-  font-weight: bold;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%);
-  color: white;
-  background-color: #262626;
-  appearance: none;
-  box-shadow: inset 0 0 0.8rem #ff5400;
-  border-radius: 10px;
-  padding-left: 20px;
-  margin-top: 30px;
-}
-
-.input:focus {
-  appearance: none;
-  border: 1px solid #ff5400 !important;
-  box-shadow: 0 0 0.2rem rgba(255, 255, 255, 0.7), 0 0 0.2rem rgba(255, 255, 255, 0.7), 0 0 2rem #ff5400, 0 0 0.8rem #ff5400, inset 0 0 1.3rem #ff5400;
-}
-
-.label-new {
-  font-size: 1.6vw;
-  color: white;
-  text-align: center;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%);
-  display: inline-block;
-  font-weight: bold;
-}

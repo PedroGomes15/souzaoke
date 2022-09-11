@@ -1,0 +1,34 @@
+.input {
+  -webkit-appearance: none;
+  width: 85%;
+  height: 60px;
+  line-height: 50px;
+  font-size: 1.5vw;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  color: white;
+  background-color: #40949171;
+  appearance: none;
+  box-shadow: inset 0 0 0.8rem #6dd1ce;
+  border-radius: 10px;
+  padding-left: 20px;
+  border: none;
+}
+
+.input:focus {
+  appearance: none;
+  outline: none;
+  box-shadow: var(--shadow-green) inset;
+}
+
+.label-new {
+  font-size: 1.4vw;
+  color: white;
+  text-align: center;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  display: inline-block;
+  font-weight: bold;
+}

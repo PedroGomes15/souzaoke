@@ -7,24 +7,17 @@ export default class SingerLine extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      usersInLine: [
-        {
-          name: "Pedro",
-          reSing: true,
-        },
-        {
-          name: "Sarah",
-          reSing: true,
-        },
-        {
-          name: "Luke",
-          reSing: false,
-        },
-      ],
+      usersInLine: this.props.line,
     };
 
     this.nextOnLine = this.nextOnLine.bind(this);
     this.handleNewSinger = this.handleNewSinger.bind(this);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.line !== prevProps.line) {
+      this.setState({ usersInLine: this.props.line });
+    }
   }
 
   nextOnLine() {

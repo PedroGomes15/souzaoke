@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Checkbox from "../input/checkbox";
 import Button from "../input/button";
+import Input from "../input/input";
 
 import "./styles.css";
 
@@ -16,8 +17,8 @@ export default class UltraInput extends Component {
     this.handleSend = this.handleSend.bind(this);
   }
 
-  handleInput(event) {
-    this.setState({ input: event.target.value });
+  handleInput(value) {
+    this.setState({ input: value });
   }
 
   handleCheckbox(event) {
@@ -35,8 +36,7 @@ export default class UltraInput extends Component {
   render() {
     return (
       <div className="input-container">
-        <label className="label-new">Novo Cantor</label>
-        <input className="input" type="text" name="name" onChange={this.handleInput} />
+        <Input handleInput={this.handleInput} label="Novo Cantor"></Input>
         <Checkbox handleCheckbox={this.handleCheckbox}></Checkbox>
         <Button handleSend={this.handleSend}></Button>
       </div>

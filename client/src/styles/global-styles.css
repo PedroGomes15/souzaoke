@@ -1,3 +1,38 @@
+:root {
+  --background: #0a0734;
+  --primary: #ae3b7e;
+  --secondary: #006665;
+  --font-color-primary: #ff8dc5;
+  --font-color-secondary: #409491;
+  --font-neon-glow-color: #ff2d95;
+  --shadow-pink: #fff 0px 0px 2px, var(--font-color-primary) 0px 0px 10px, var(--font-color-primary) 0px 0px 10px, var(--font-neon-glow-color) 0px 0px 20px,
+    var(--font-neon-glow-color) 0px 0px 30px, var(--font-neon-glow-color) 0px 0px 40px;
+  --shadow--dark-pink: var(--font-color-primary) 0px 0px 10px, var(--font-neon-glow-color) 0px 0px 20px, var(--font-neon-glow-color) 0px 0px 30px;
+  --shadow-green: #fff 0px 0px 2px, #6dd1ce 0px 0px 10px, #6dd1ce 0px 0px 10px, #409491 0px 0px 20px, #409491 0px 0px 30px, #409491 0px 0px 40px;
+}
+
+@font-face {
+  font-family: "Rock";
+  src: url("../font/Rockwell-Font/ROCK.TTF") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Rock";
+  src: url("../font/Rockwell-Font/rockb.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "ProximaNova";
+  src: url("../font/Proxima-Nova-Font/Proxima_Nova_Font.otf") format("truetype");
+  font-weight: normal;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Playball&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Galada&display=swap");
+
 .App {
   text-align: center;
   height: 100%;
@@ -8,7 +43,9 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #262626;
+  background-color: #0a0734;
+  font-family: "Lobster", cursive;
+  letter-spacing: 3px;
 }
 
 .App-header {
