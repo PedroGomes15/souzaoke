@@ -1,3 +1,6 @@
+.bt-container {
+}
+
 .button-send {
   width: 12vh;
   height: 5vh;
@@ -11,7 +14,13 @@
   transform: translate(-50%);
 }
 
-.button-send:hover {
+.button-send:disabled {
+  color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+}
+
+.button-send:hover:enabled {
   box-shadow: var(--shadow-pink) inset;
   border: none;
 }

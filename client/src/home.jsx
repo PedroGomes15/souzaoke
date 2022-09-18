@@ -5,8 +5,8 @@ import "./styles/home-styles.css";
 import SingerLine from "./components/singer-line";
 import SongList from "./components/song-list";
 import Logo from "./components/logo";
-import RoomCreator from "./components/room_creator";
 import API from "./apis/api.js";
+import RoomContainer from "./components/room-container";
 
 export const Home = () => {
   const [room_id, setRoomId] = useState("");
@@ -55,10 +55,10 @@ export const Home = () => {
       {room_id ? (
         <div className="content">
           <SongList />
-          <SingerLine line={line || []} />
+          <SingerLine roomName={room_name} line={line || []} />
         </div>
       ) : (
-        <RoomCreator handleSetRoomId={handleSetRoomId}></RoomCreator>
+        <RoomContainer handleSetRoomId={handleSetRoomId}></RoomContainer>
       )}
     </div>
   );

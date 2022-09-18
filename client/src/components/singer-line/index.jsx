@@ -39,7 +39,9 @@ export default class SingerLine extends Component {
     return (
       <div className="container-singer">
         <div id="scrollPath"></div>
-        <div className="list-line-container">
+        <p className="roomTitle">Sala: {this.props.roomName}</p>
+        <UltraInput handleNewSinger={this.handleNewSinger}></UltraInput>
+        <div className="listLineContainer">
           {this.state.usersInLine.map((element, i) => {
             return (
               <div className="lineContainer" key={i}>
@@ -49,7 +51,6 @@ export default class SingerLine extends Component {
             );
           })}
         </div>
-        <UltraInput handleNewSinger={this.handleNewSinger}></UltraInput>
       </div>
     );
   }

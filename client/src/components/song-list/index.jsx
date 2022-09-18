@@ -9,38 +9,22 @@ export default class SongList extends Component {
     super(props);
     this.state = {
       search: false,
-      songList: [
-        {
-          name: "Pedro",
-          reSing: true,
-        },
-        {
-          name: "Sarah",
-          reSing: true,
-        },
-        {
-          name: "Luke",
-          reSing: false,
-        },
-      ],
+      songList: [],
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit = async (termFromSearchBar) => {
-    console.log("Teste ", termFromSearchBar);
     const response = await youtube.get("/search", {
       params: {
         q: termFromSearchBar,
       },
     });
 
-    console.log("Teste ", response.data.items);
     this.setState({
       videos: response.data.items,
     });
-    console.log("this is resp", response);
   };
 
   render() {

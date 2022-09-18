@@ -10,8 +10,13 @@ export default class Button extends Component {
 
   render() {
     return (
-      <div style={this.props.style}>
-        <button className="button-send" onClick={this.props.handleSend}>
+      <div>
+        <button
+          style={this.props.style}
+          className="button-send"
+          onClick={this.props.handleSend}
+          disabled={this.props.disabled}
+        >
           {this.props.label}
         </button>
       </div>

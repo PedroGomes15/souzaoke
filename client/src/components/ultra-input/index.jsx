@@ -36,9 +36,15 @@ export default class UltraInput extends Component {
   render() {
     return (
       <div className="input-container">
-        <Input handleInput={this.handleInput} label="Novo Cantor"></Input>
+        <div className="input-content">
+          <Input handleInput={this.handleInput} placeholder="Novo Contor"></Input>
+          <Button
+            handleSend={this.handleSend}
+            label="+"
+            style={{ width: "fit-content", padding: "10px 15px" }}
+          ></Button>
+        </div>
         <Checkbox handleCheckbox={this.handleCheckbox}></Checkbox>
-        <Button handleSend={this.handleSend}></Button>
       </div>
     );
   }
