@@ -16,6 +16,7 @@
   display: inline-block;
   text-shadow: var(--shadow--dark-pink);
   margin: 0;
+  font-family: Galada;
 }
 
 .container-input {

@@ -1,12 +1,9 @@
-.bt-container {
-}
-
 .button-send {
   width: 12vh;
   height: 5vh;
   font-size: 1.1vw;
   background: transparent;
-  border: 2px solid var(--font-color-secondary);
+  border: 2px solid var(--primary);
   border-radius: 10px;
   color: white;
   position: relative;
@@ -22,5 +19,4 @@
 
 .button-send:hover:enabled {
   box-shadow: var(--shadow-pink) inset;
-  border: none;
 }

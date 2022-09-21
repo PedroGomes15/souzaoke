@@ -37,7 +37,7 @@ export default class UltraInput extends Component {
     return (
       <div className="input-container">
         <div className="input-content">
-          <Input handleInput={this.handleInput} placeholder="Novo Contor"></Input>
+          <Input handleInput={this.handleInput} placeholder="novo cantor"></Input>
           <Button
             handleSend={this.handleSend}
             label="+"

@@ -37,15 +37,15 @@ export default class SingerLine extends Component {
 
   render() {
     return (
-      <div className="container-singer">
+      <div className="containerSinger">
         <div id="scrollPath"></div>
-        <p className="roomTitle">Sala: {this.props.roomName}</p>
+        <p className="roomTitle">{this.props.roomName}</p>
         <UltraInput handleNewSinger={this.handleNewSinger}></UltraInput>
         <div className="listLineContainer">
           {this.state.usersInLine.map((element, i) => {
             return (
               <div className="lineContainer" key={i}>
-                <div className="lineIndex">#{i + 1}</div>
+                <div className="lineIndex">{i + 1}</div>
                 <div className="lineName">{element.name}</div>
               </div>
             );

@@ -1,9 +1,12 @@
 .input-container {
-  padding: 40px 20px;
+  padding: 20px;
   position: relative;
   /*background-color: #262626;
   box-shadow: inset 0 0 0.8rem black;*/
   border-radius: 10px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 .input-content {

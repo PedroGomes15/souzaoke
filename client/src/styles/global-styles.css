@@ -36,6 +36,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Galada&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Karla&family=Lato&family=Libre+Baskerville&family=Montserrat&family=Raleway&display=swap");
 
 .App {
   text-align: center;
@@ -49,7 +50,7 @@ body {
   box-sizing: border-box;
   background-color: #0a0734;
   font-family: "Roboto", sans-serif;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 
 .App-header {
@@ -76,8 +77,8 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  border: 2px solid #ff5400;
-  box-shadow: inset 0 0 0.3rem #ff5400;
+  border: 2px solid var(--font-color-secondary);
+  box-shadow: inset 0 0 0.3rem var(--font-color-secondary);
   border-radius: 5px;
 }
 
