@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import UltraInput from "../ultra-input";
+import { toast } from "react-toastify";
 
 import "./styles.css";
+import "react-toastify/dist/ReactToastify.css";
 
 export default class SingerLine extends Component {
   constructor(props) {
@@ -10,8 +12,10 @@ export default class SingerLine extends Component {
       usersInLine: this.props.line,
     };
 
-    this.nextOnLine = this.nextOnLine.bind(this);
     this.handleNewSinger = this.handleNewSinger.bind(this);
+    this.handlePrepareToRemove = this.handlePrepareToRemove.bind(this);
+    this.handleRemoveSinger = this.handleRemoveSinger.bind(this);
+    this.handlePrepareLink = this.handlePrepareLink.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -20,32 +24,77 @@ export default class SingerLine extends Component {
     }
   }
 
-  nextOnLine() {
-    let usersInLineAux = this.state.usersInLine;
-    let fElement = usersInLineAux.shift();
-    if (fElement.reSing) {
-      usersInLineAux.push(fElement);
-    }
-    this.setState({ usersInLine: usersInLineAux });
-  }
-
   handleNewSinger(singer) {
     if (singer != null && singer.name !== "") {
-      this.setState({ usersInLine: [...this.state.usersInLine, singer] });
+      this.setState({ usersInLine: [...this.state.usersInLine, singer] }, () => {
+        this.props.handleNewSinger(this.state.usersInLine);
+      });
     }
+  }
+
+  handlePrepareToRemove(index) {
+    this.setState({ prepareToRemove: index });
+
+    if (index) {
+      setTimeout(() => {
+        this.handlePrepareToRemove(null);
+      }, 5000);
+    }
+  }
+
+  handleRemoveSinger(index) {
+    let tempLine = this.state.usersInLine;
+    tempLine.splice(index, 1);
+    this.setState({ usersInLine: tempLine }, () => {
+      this.props.handleNewSinger(this.state.usersInLine);
+      this.handlePrepareToRemove(null);
+    });
+  }
+
+  handlePrepareLink() {
+    navigator.clipboard.writeText(window.location.href);
+    toast.dark("O link da sala foi copiado", {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+    });
   }
 
   render() {
     return (
       <div className="containerSinger">
         <div id="scrollPath"></div>
-        <p className="roomTitle">{this.props.roomName}</p>
+        <p
+          className="roomTitle"
+          onClick={() => {
+            this.handlePrepareLink();
+          }}
+        >
+          {this.props.roomName}
+        </p>
         <UltraInput handleNewSinger={this.handleNewSinger}></UltraInput>
         <div className="listLineContainer">
           {this.state.usersInLine.map((element, i) => {
             return (
               <div className="lineContainer" key={i}>
-                <div className="lineIndex">{i + 1}</div>
+                {this.state.prepareToRemove === i ? (
+                  <div className="removeSinger" onClick={() => this.handleRemoveSinger(i)}>
+                    X
+                  </div>
+                ) : (
+                  <div
+                    className="lineIndex"
+                    onClick={() =>
+                      this.handlePrepareToRemove(this.state.prepareToRemove ? null : i)
+                    }
+                  >
+                    {i + 1}
+                  </div>
+                )}
                 <div className="lineName">{element.name}</div>
               </div>
             );

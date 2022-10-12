@@ -1,7 +1,21 @@
-.containerSongList {
-  background-color: purple;
+.container-song-list {
   height: fit-content;
-  width: 60%;
-  left: 100px;
+  width: 45%;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5vh;
+}
+
+.container-song-card-list {
+  width: 110%;
+  overflow: auto;
+  padding: 50px;
+  max-height: 65vh;
+  display: flex;
+  gap: 5vh;
+  flex: auto;
+  flex-flow: wrap;
 }

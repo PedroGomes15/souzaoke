@@ -1,13 +1,18 @@
 .Hotbg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
   background: #09909b;
   height: 60px;
+  width: fit-content;
   border-radius: 40px;
   padding: 10px;
-  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #09909b, 0 0 0.8rem #09909b, inset 0 0 1.3rem #09909b;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #09909b, 0 0 0.8rem #09909b,
+    inset 0 0 1.3rem #09909b;
+}
+
+.Hotform {
+  height: 100%;
+  width: fit-content;
+  transition: 0.4s;
 }
 
 .openTextBox {
@@ -15,9 +20,13 @@
   padding: 0 10px !important;
 }
 
-.Hotbg:hover > .Hotbg-txt {
+.Hotbg:hover > .Hotform {
   width: 450px;
   padding: 0 10px;
+}
+
+.Hotbg:hover > .Hotbg-txt {
+  width: 450px;
 }
 
 .Hotbg:hover > .Hotbg-btn {
@@ -38,6 +47,7 @@
   color: azure;
   cursor: pointer;
   font-size: 2rem;
+  position: relative;
 }
 
 .Hotbg-btn > i {
@@ -61,6 +71,7 @@ a {
   width: 0px;
   font-weight: bold;
 }
+
 ::placeholder {
   color: rgba(240, 255, 255, 0.5);
 }

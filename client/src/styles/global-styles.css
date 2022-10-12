@@ -1,42 +1,22 @@
 :root {
   --background: #0a0734;
+  --background-dark: #01010f;
   --primary: #ae3b7e;
   --secondary: #006665;
   --font-color-primary: #ff8dc5;
   --font-color-secondary: #409491;
   --font-neon-glow-color: #ff2d95;
+  --font-color-primary-transparent: #ff8dc4c2;
   --shadow-pink: #fff 0px 0px 2px, var(--font-color-primary) 0px 0px 10px,
     var(--font-color-primary) 0px 0px 10px, var(--font-neon-glow-color) 0px 0px 20px,
     var(--font-neon-glow-color) 0px 0px 30px, var(--font-neon-glow-color) 0px 0px 40px;
-  --shadow--dark-pink: var(--font-color-primary) 0px 0px 10px,
+  --shadow-dark-pink: var(--font-color-primary) 0px 0px 10px,
     var(--font-neon-glow-color) 0px 0px 20px, var(--font-neon-glow-color) 0px 0px 30px;
   --shadow-green: #fff 0px 0px 2px, #6dd1ce 0px 0px 10px, #6dd1ce 0px 0px 10px, #409491 0px 0px 20px,
     #409491 0px 0px 30px, #409491 0px 0px 40px;
+  --shadow-dark-green: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #09909b, 0 0 0.8rem #09909b,
+    inset 0 0 1.3rem #09909b;
 }
-
-@font-face {
-  font-family: "Rock";
-  src: url("../font/Rockwell-Font/ROCK.TTF") format("truetype");
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "Rock";
-  src: url("../font/Rockwell-Font/rockb.ttf") format("truetype");
-  font-weight: bold;
-}
-
-@font-face {
-  font-family: "ProximaNova";
-  src: url("../font/Proxima-Nova-Font/Proxima_Nova_Font.otf") format("truetype");
-  font-weight: normal;
-}
-
-@import url("https://fonts.googleapis.com/css2?family=Playball&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Galada&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Karla&family=Lato&family=Libre+Baskerville&family=Montserrat&family=Raleway&display=swap");
 
 .App {
   text-align: center;

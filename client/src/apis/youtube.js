@@ -1,11 +1,13 @@
 import axios from "axios";
-const KEY = ""; // mention your youtube API key here
+const KEY = "AIzaSyD3ueJeFeXBLXCAzyKaqvkRltR3417KXs4"; // mention your youtube API key here
 
 export default axios.create({
   baseURL: "https://www.googleapis.com/youtube/v3/",
   params: {
-    part: "snippet",
-    maxResults: 15,
+    part: "snippet,id",
+    maxResults: 10,
     key: KEY,
+    regionCode: "BR",
+    type: "video",
   },
 });

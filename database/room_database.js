@@ -42,7 +42,7 @@ module.exports = {
     updates["/room/" + room_id] = room;
     update(ref(db), updates);
 
-    return { status: "succes" };
+    return { status: "succes", line: line };
   },
 
   GenerateId() {

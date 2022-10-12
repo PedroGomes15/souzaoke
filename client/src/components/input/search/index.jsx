@@ -28,17 +28,27 @@ export default class Search extends Component {
   }
 
   handleClickSearch(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!this.state.inputValue) return;
     this.props.handleSubmit(this.state.inputValue);
   }
 
   render() {
     return (
-      <div className="Hotbg">
-        <input type="text" name="" id="input-txt" className="Hotbg-txt" placeholder="Buscar Musica" onChange={this.handleChangeInput} />
-        <a href="/#" className="Hotbg-btn" onClick={this.handleClickSearch}>
+      <form onSubmit={this.handleClickSearch} className="Hotbg">
+        <input
+          type="text"
+          name=""
+          id="input-txt"
+          className="Hotbg-txt"
+          placeholder="Buscar Musica"
+          onChange={this.handleChangeInput}
+        />
+        <div className="Hotbg-btn" onClick={this.handleClickSearch}>
           <i className="fa fa-search fa-10x"></i>
-        </a>
-      </div>
+        </div>
+      </form>
     );
   }
 }
