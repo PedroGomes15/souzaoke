@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "Segoe UI Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Segoe UI Regular"), url("../font/segoe-ui/Segoe UI.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Segoe UI Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Segoe UI Italic"), url("../font/segoe-ui/Segoe UI Italic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Segoe UI Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Segoe UI Bold"), url("../font/segoe-ui/Segoe UI Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Segoe UI Bold Italic";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Segoe UI Bold Italic"),
+    url("../font/segoe-ui/Segoe UI Bold Italic.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Rock";
+  src: url("../font/Rockwell-Font/ROCK.TTF") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Rock";
+  src: url("../font/Rockwell-Font/rockb.ttf") format("truetype");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "ProximaNova";
+  src: url("../font/Proxima-Nova-Font/Proxima_Nova_Font.otf") format("truetype");
+  font-weight: normal;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Playball&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Galada&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Karla&family=Lato&family=Libre+Baskerville&family=Montserrat&family=Raleway&display=swap");

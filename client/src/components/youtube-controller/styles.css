@@ -1,0 +1,92 @@
+.yt-player {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+}
+
+.yt-controller-container {
+  position: absolute;
+  width: 100%;
+  height: 3%;
+  z-index: 999;
+  bottom: 3%;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 0px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.2s;
+  visibility: hidden;
+}
+
+.yt-player:hover > .yt-controller-container {
+  height: 5%;
+  padding: 10px 0px;
+  visibility: visible;
+  bottom: 00px;
+}
+
+.yt-controller-container-pause {
+  height: 5%;
+  padding: 10px 0px;
+  visibility: visible;
+  bottom: 00px;
+}
+
+.material-icons {
+  position: relative;
+  font-size: 3.5rem !important;
+  color: #a4f0edab;
+  overflow: visible;
+  filter: drop-shadow(0 0 0.75rem var(--font-color-secondary));
+  stroke: var(--font-color-secondary);
+  margin: 0px 3rem;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.timeline-container {
+  width: 100%;
+  height: 0.4rem;
+  background-color: rgba(100, 100, 100, 0.7);
+  border-radius: 5px;
+}
+
+.timeline {
+  position: relative;
+  width: calc(var(--progress) * 100%);
+  background-color: var(--secondary);
+  box-shadow: var(--shadow-dark-green);
+  height: 100%;
+  border-radius: 5px;
+}
+
+.next-singer-banner {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: fit-content;
+  padding: 0 1rem;
+  height: 4rem;
+  background-color: var(--font-color-primary-transparent);
+  z-index: 999;
+  border-radius: 10px;
+  box-shadow: var(--shadow-pink) inset;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto";
+  color: white;
+  animation: showSlideBanner 1s ease-in-out;
+}
+
+@keyframes showSlideBanner {
+  0% {
+    top: -2rem;
+  }
+  100% {
+    top: 0.5rem;
+  }
+}
