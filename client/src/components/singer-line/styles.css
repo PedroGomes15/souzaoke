@@ -9,7 +9,7 @@
   border-radius: 10px;
   padding: 30px;
   box-shadow: var(--shadow-dark-green);
-  max-width: 30rem;
+  max-width: 80%;
 }
 
 .listLineContainer {
@@ -30,7 +30,7 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-  gap: 20px;
+  gap: 16px;
 }
 
 .lineIndex,
@@ -58,13 +58,13 @@
   white-space: nowrap;
   overflow: hidden !important;
   text-overflow: ellipsis;
-  width: 20rem;
+  width: fit-content;
 }
 
 .roomTitle {
   width: 100%;
   text-align: center;
-  font-size: 2vw;
+  font-size: 2em;
   margin: 0px;
   color: var(--font-color-primary);
   text-shadow: var(--shadow-dark-pink);
@@ -75,7 +75,7 @@
 .roomId {
   width: 100%;
   text-align: center;
-  font-size: 1vw;
+  font-size: 1em;
   margin: 0px;
   color: var(--font-color-secondary);
   font-family: "Galada";
@@ -84,11 +84,10 @@
 
 .refresh-material-icons {
   position: relative;
-  font-size: 2rem !important;
+  font-size: 1.1rem !important;
   color: var(--font-color-primary);
   overflow: visible;
   filter: drop-shadow(0 0 0.5rem var(--font-color-primary));
   stroke: var(--font-color-primary);
-  margin: 0px 2rem;
   transition: 0.4s;
 }

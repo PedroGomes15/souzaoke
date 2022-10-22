@@ -5,10 +5,10 @@
   margin-bottom: 30px;
   width: 100%;
   flex-direction: row;
-  padding: 0px 20px;
   gap: 0px 1rem;
-  left: 30px;
   position: relative;
+  justify-content: start;
+  left: 1em;
 }
 
 :root {
@@ -50,7 +50,7 @@ input[type="checkbox"]::before {
 /* Label */
 input[type="checkbox"]::after {
   position: absolute;
-  font-size: 0.8rem;
+  font-size: 0.8em;
   top: 0.3rem;
   right: 0.4rem;
   color: var(--text-secondary);
@@ -76,7 +76,7 @@ input[type="checkbox"]:checked::after {
 }
 
 .label {
-  font-size: 1.2vw;
+  font-size: 1.5em;
   color: white;
   position: relative;
 }

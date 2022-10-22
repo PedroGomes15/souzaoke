@@ -1,7 +1,7 @@
 .button-send {
-  width: 12vh;
-  height: 5vh;
-  font-size: 1.1vw;
+  width: 7em;
+  height: 2em;
+  font-size: 1.6em;
   background: transparent;
   border: 2px solid var(--primary);
   border-radius: 10px;

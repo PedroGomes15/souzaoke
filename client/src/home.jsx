@@ -17,10 +17,14 @@ export const Home = () => {
   const [room_name, setRoomName] = useState("");
   const [song, setSong] = useState("");
   const [songListKey, setSongListKey] = useState("");
+  const [isDesktop, setIsDesktop] = useState("");
 
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
     const id = queryParams.get("room_id");
+
+    updatePredicate();
+    window.addEventListener("resize", updatePredicate);
     if (id) {
       setRoomId(id);
     }
@@ -33,6 +37,13 @@ export const Home = () => {
     }
     // eslint-disable-next-line
   }, [room_id]);
+
+  useEffect(
+    () => () => {
+      window.removeEventListener("resize", updatePredicate);
+    },
+    []
+  );
 
   function handleSetRoomId(room_id) {
     setRoomId(room_id);
@@ -50,6 +61,10 @@ export const Home = () => {
     setTimeout(async () => {
       updateLine();
     }, 1000 * 10);
+  }
+
+  function updatePredicate() {
+    setIsDesktop(window.innerWidth > 1200);
   }
 
   async function handleUpdateLine(line) {
@@ -95,12 +110,13 @@ export const Home = () => {
           ></YoutubeController>
         </div>
       )}
-      <div className="header">
-        <Logo />
-      </div>
+
+      <div className="header">{isDesktop && <Logo />}</div>
       {room_id ? (
         <div className="content">
-          <SongList handleSelectSong={handleSelectSong} line={line || []} key={songListKey} />
+          {isDesktop && (
+            <SongList handleSelectSong={handleSelectSong} line={line || []} key={songListKey} />
+          )}
           <SingerLine
             roomName={room_name}
             roomId={room_id}

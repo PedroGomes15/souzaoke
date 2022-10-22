@@ -24,6 +24,9 @@ input:-webkit-autofill:focus {
   height: 80%;
   box-sizing: border-box;
   display: flex;
-  padding-left: 10%;
   justify-content: space-around;
+}
+
+* {
+  /*outline: 1px dotted red;*/
 }
