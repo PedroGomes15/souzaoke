@@ -25,19 +25,29 @@ export default class UltraInput extends Component {
     this.setState({ checkbox: event.target.value });
   }
 
-  handleSend() {
+  handleSend(e) {
+    e.preventDefault();
+    e.stopPropagation();
     if (!this.state.input) return;
     this.props.handleNewSinger({
       name: this.state.input,
       reSing: this.state.checkbox,
     });
+    this.handleInput("");
+    document.getElementById("input-new-singer").value = "";
   }
 
   render() {
     return (
       <div className="input-container">
         <div className="input-content">
-          <Input handleInput={this.handleInput} placeholder="novo cantor"></Input>
+          <form onSubmit={this.handleSend}>
+            <Input
+              inputId="input-new-singer"
+              handleInput={this.handleInput}
+              placeholder="novo cantor"
+            ></Input>
+          </form>
           <Button
             handleSend={this.handleSend}
             label="+"

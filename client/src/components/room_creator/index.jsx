@@ -36,8 +36,17 @@ export default class RoomCreator extends Component {
     });
   }
 
-  handleJoinRoom() {
-    this.props.handleSetRoomId(this.state.room_id);
+  async handleJoinRoom() {
+    let response = await API.get(`/room?room_id=${this.state.room_id}`);
+    if (response.data) {
+      console.log("Existe ", response);
+      this.props.handleSetRoomId(this.state.room_id);
+    } else {
+      this.setState({ wrongId: true });
+      setTimeout(() => {
+        this.setState({ wrongId: false });
+      }, 1000 * 5);
+    }
   }
 
   render() {
@@ -56,9 +65,13 @@ export default class RoomCreator extends Component {
             placeholder={this.state.create_room ? "nome da sala" : "id da sala"}
           ></Input>
         </div>
+        {this.state.wrongId && <div className="wrong-id">Id da sala não existe</div>}
         <div className="create-room-form-input">
           <Button
-            disabled={this.state.create_room && !this.state.room_name}
+            disabled={
+              (this.state.create_room && !this.state.room_name) ||
+              (!this.state.create_room && !this.state.room_id)
+            }
             label={this.state.create_room ? "CRIAR" : "ENTRAR"}
             handleSend={this.state.create_room ? this.handleCreateRoom : this.handleJoinRoom}
           ></Button>

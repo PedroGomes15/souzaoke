@@ -18,7 +18,14 @@ export default class Input extends Component {
     return (
       <div>
         {this.props.label && <label className="label-new">{this.props.label}</label>}
-        <input className="input" type="text" name="name" placeholder={this.props.placeholder} onChange={this.handleInput} />
+        <input
+          id={this.props.inputId}
+          className="input"
+          type="text"
+          name="name"
+          placeholder={this.props.placeholder}
+          onChange={this.handleInput}
+        />
       </div>
     );
   }

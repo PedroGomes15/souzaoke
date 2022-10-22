@@ -3,6 +3,7 @@ import PlayArrowOutlinedIcon from "@mui/icons-material/PlayArrowOutlined";
 import PauseArrowOutlinedIcon from "@mui/icons-material/PauseOutlined";
 import FullscreenExitOutlinedIcon from "@mui/icons-material/FullscreenExitOutlined";
 import FullscreenOutlined from "@mui/icons-material/FullscreenOutlined";
+import Close from "@mui/icons-material/Close";
 import YouTube from "react-youtube";
 import YoutubePreLoader from "../youtube-pre-loader";
 
@@ -37,9 +38,9 @@ export default class YoutubeController extends Component {
   }
 
   componentDidMount() {
-    setTimeout(() => {
+    /*setTimeout(() => {
       this.setState({ preload: false });
-    }, 1000 * 5);
+    }, 1000 * 5);*/
   }
 
   handleOnVideoReady(event) {
@@ -152,8 +153,14 @@ export default class YoutubeController extends Component {
               )}
             </div>
             {this.state.showNextSinger && this.props.nextSinger && (
-              <div className="next-singer-banner">proximo cantor: {this.props.nextSinger.name}</div>
+              <div className="next-singer-banner" onClick={this.handleOnVideoEnd}>
+                proximo cantor: {this.props.nextSinger.name}
+              </div>
             )}
+            <Close
+              className="material-icons close-youtube"
+              onClick={this.props.handleClose}
+            ></Close>
           </div>
         )}
       </div>

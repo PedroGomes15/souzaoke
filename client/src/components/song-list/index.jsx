@@ -15,6 +15,7 @@ export default class SongList extends Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSelectSong = this.handleSelectSong.bind(this);
   }
 
   async handleSubmit(termFromSearchBar) {
@@ -46,21 +47,29 @@ export default class SongList extends Component {
     this.setState({ songList: filteredItens });
   }
 
+  handleSelectSong(song) {
+    this.props.handleSelectSong(song);
+  }
+
   render() {
     return (
       <div className="container-song-list">
-        <Search handleSubmit={this.handleSubmit} />
-        <div className="container-song-card-list">
-          {this.state.songList.map((song) => {
-            return (
-              <SongCard
-                song={song}
-                key={song.id}
-                handleSelectSong={this.props.handleSelectSong}
-              ></SongCard>
-            );
-          })}
-        </div>
+        {this.props.line.length > 0 && (
+          <>
+            <Search clearInput={this.clearInput} handleSubmit={this.handleSubmit} />
+            <div className="container-song-card-list">
+              {this.state.songList.map((song) => {
+                return (
+                  <SongCard
+                    song={song}
+                    key={song.id}
+                    handleSelectSong={this.handleSelectSong}
+                  ></SongCard>
+                );
+              })}
+            </div>
+          </>
+        )}
       </div>
     );
   }

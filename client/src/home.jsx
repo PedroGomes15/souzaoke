@@ -16,6 +16,7 @@ export const Home = () => {
   const [line, setLine] = useState(0);
   const [room_name, setRoomName] = useState("");
   const [song, setSong] = useState("");
+  const [songListKey, setSongListKey] = useState("");
 
   useEffect(() => {
     const queryParams = new URLSearchParams(window.location.search);
@@ -60,6 +61,7 @@ export const Home = () => {
 
   function handleSelectSong(song) {
     setSong(song);
+    setSongListKey(new Date().getTime());
   }
 
   async function handleNextSinger() {
@@ -69,12 +71,18 @@ export const Home = () => {
       usersInLineAux.push(fElement);
     }
     setSong(null);
+    document.getElementById("input-search").value = "";
     await handleUpdateLine(usersInLineAux);
+  }
+
+  function handleClose() {
+    setSong(null);
   }
 
   return (
     <div className="container">
       <ToastContainer />
+
       {song && (
         <div>
           <YoutubeController
@@ -83,6 +91,7 @@ export const Home = () => {
             handleNextSinger={handleNextSinger}
             singer={line[0]}
             nextSinger={line[1]}
+            handleClose={handleClose}
           ></YoutubeController>
         </div>
       )}
@@ -91,8 +100,14 @@ export const Home = () => {
       </div>
       {room_id ? (
         <div className="content">
-          <SongList handleSelectSong={handleSelectSong} />
-          <SingerLine roomName={room_name} line={line || []} handleNewSinger={handleUpdateLine} />
+          <SongList handleSelectSong={handleSelectSong} line={line || []} key={songListKey} />
+          <SingerLine
+            roomName={room_name}
+            roomId={room_id}
+            line={line || []}
+            handleNewSinger={handleUpdateLine}
+            handleNextSinger={handleNextSinger}
+          />
         </div>
       ) : (
         <RoomContainer handleSetRoomId={handleSetRoomId}></RoomContainer>

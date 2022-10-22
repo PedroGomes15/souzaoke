@@ -80,6 +80,14 @@
   font-family: "Roboto";
   color: white;
   animation: showSlideBanner 1s ease-in-out;
+  cursor: pointer;
+}
+
+.close-youtube {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 999;
 }
 
 @keyframes showSlideBanner {

@@ -9,5 +9,6 @@ export default axios.create({
     key: KEY,
     regionCode: "BR",
     type: "video",
+    videoEmbeddable: "true",
   },
 });

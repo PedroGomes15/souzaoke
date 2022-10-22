@@ -15,7 +15,7 @@ export default class Search extends Component {
 
   handleChangeInput(e, value) {
     this.setState({ input: e.target.value }, () => {
-      const elementInput = document.getElementById("input-txt");
+      const elementInput = document.getElementById("input-search");
       if (e.target.value) {
         if (!elementInput.classList.contains("openTextBox")) {
           elementInput.classList.add("openTextBox");
@@ -40,7 +40,7 @@ export default class Search extends Component {
         <input
           type="text"
           name=""
-          id="input-txt"
+          id="input-search"
           className="Hotbg-txt"
           placeholder="Buscar Musica"
           onChange={this.handleChangeInput}

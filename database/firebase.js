@@ -2,7 +2,7 @@ const { initializeApp } = require("firebase/app");
 const { getDatabase, serverTimestamp } = require("firebase/database");
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDwmnV-rbsc1ei-29f6TkocOH2tTTZDaoA",
+  apiKey: process.env.API_KEY,
   authDomain: "souzaoke.firebaseapp.com",
   projectId: "souzaoke",
   storageBucket: "souzaoke.appspot.com",

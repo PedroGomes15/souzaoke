@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import UltraInput from "../ultra-input";
 import { toast } from "react-toastify";
+import RefreshOutlined from "@mui/icons-material/RefreshOutlined";
+import Button from "../input/button";
 
 import "./styles.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -76,6 +78,14 @@ export default class SingerLine extends Component {
         >
           {this.props.roomName}
         </p>
+        <p
+          className="roomId"
+          onClick={() => {
+            this.handlePrepareLink();
+          }}
+        >
+          id: {this.props.roomId}
+        </p>
         <UltraInput handleNewSinger={this.handleNewSinger}></UltraInput>
         <div className="listLineContainer">
           {this.state.usersInLine.map((element, i) => {
@@ -96,10 +106,14 @@ export default class SingerLine extends Component {
                   </div>
                 )}
                 <div className="lineName">{element.name}</div>
+                <RefreshOutlined className="refresh-material-icons"></RefreshOutlined>
               </div>
             );
           })}
         </div>
+        {!/Mobi/.test(navigator.userAgent) && (
+          <Button label={"Proximo"} handleSend={this.props.handleNextSinger}></Button>
+        )}
       </div>
     );
   }

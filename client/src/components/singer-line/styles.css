@@ -9,24 +9,26 @@
   border-radius: 10px;
   padding: 30px;
   box-shadow: var(--shadow-dark-green);
+  max-width: 30rem;
 }
 
 .listLineContainer {
-  max-height: 70%;
+  max-height: 25rem;
   overflow: auto;
-  padding: 2% 8%;
+  padding: 2% 4%;
   margin-top: 0px;
 }
 
 .lineContainer {
   width: 100%;
-  height: 80px;
+  height: 5rem;
   /*box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
   margin-bottom: 20px;
   border-radius: 7px;
   background: radial-gradient(#09909b, #007680);*/
   position: relative;
   display: flex;
+  align-items: center;
   flex-direction: row;
   gap: 20px;
 }
@@ -52,6 +54,11 @@
   font-size: 2.2em;
   font-family: "Roboto", sans-serif;
   text-transform: lowercase;
+  max-height: 5rem;
+  white-space: nowrap;
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  width: 20rem;
 }
 
 .roomTitle {
@@ -63,4 +70,25 @@
   text-shadow: var(--shadow-dark-pink);
   font-family: "Galada";
   cursor: pointer;
+}
+
+.roomId {
+  width: 100%;
+  text-align: center;
+  font-size: 1vw;
+  margin: 0px;
+  color: var(--font-color-secondary);
+  font-family: "Galada";
+  cursor: pointer;
+}
+
+.refresh-material-icons {
+  position: relative;
+  font-size: 2rem !important;
+  color: var(--font-color-primary);
+  overflow: visible;
+  filter: drop-shadow(0 0 0.5rem var(--font-color-primary));
+  stroke: var(--font-color-primary);
+  margin: 0px 2rem;
+  transition: 0.4s;
 }
