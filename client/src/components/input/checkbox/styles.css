@@ -7,7 +7,7 @@
   flex-direction: row;
   gap: 0px 1rem;
   position: relative;
-  justify-content: start;
+  justify-content: flex-start;
   left: 1em;
 }
 
